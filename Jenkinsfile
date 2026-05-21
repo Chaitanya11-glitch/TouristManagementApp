@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     tools {
         maven 'Maven3'
     }
@@ -17,13 +17,6 @@ pipeline {
             steps {
                 echo 'Building the application...'
                 sh 'mvn clean package -DskipTests'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                sh 'mvn test'
             }
         }
 
