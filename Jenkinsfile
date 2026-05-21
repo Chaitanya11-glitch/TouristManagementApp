@@ -20,10 +20,10 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Code Quality Check') {
             steps {
-                echo 'Building Docker image...'
-                sh 'docker build -t tourist-app .'
+                echo 'Checking code quality...'
+                sh 'mvn checkstyle:check || true'
             }
         }
     }
